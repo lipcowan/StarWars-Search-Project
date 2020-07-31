@@ -8,17 +8,40 @@ class App extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			characterName: "Luke Skywalker"
+			characterName: "Luke Skywalker",
+			resultingNames: []
 		}
 	}
+
+	searchCharacter = (name) => {
+		this.setState({
+			characterName: name
+		})
+	}
+
+	populateResults = (results) => {
+		results.map(name => {
+			this.setState({
+				resultingNames: this.state.resultingNames + name
+			})
+		})
+		return results
+	}
+
+
 
 	render(){
 		return (
 			<>
 				<Header/>
 				<main className='App'>
-					<PeopleSearch character={this.state.characterName}/>
-					<SearchResults character={this.state.characterName}/>
+					<PeopleSearch 
+					character={this.state.characterName} 
+					searchCharacter={this.searchCharacter}
+					popRes={this.populateResults}
+					/>
+					<SearchResults 
+					characters={this.state.resultingNames}/>
 				</main>
 			</>
 		);
