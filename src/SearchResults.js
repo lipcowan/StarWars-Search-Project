@@ -10,7 +10,7 @@ export default class SearchResults extends Component {
         const namesArr = this.props.characters
         return (
             <div>
-               <ul> {namesArr.map(name => <li>{name}</li>)}
+               <ul> {namesArr.map(name => <li key={name}>{name}</li>)}
                </ul>
             </div>
         )
