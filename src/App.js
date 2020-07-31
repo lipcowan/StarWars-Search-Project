@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Header from './Header';
+import PeopleSearch from './PeopleSearch';
+import SearchResults from './SearchResults';
 
-function App() {
+class App extends Component {
 
-	return (
-	  <main className='App'>
-	     {/* Content goes here */}
-	  </main>
-	);
+	render(){
+		return (
+			<>
+				<Header/>
+				<main className='App'>
+					<PeopleSearch/>
+					<SearchResults/>
+				</main>
+			</>
+		);
+	}
+	
 }
 
 export default App;
