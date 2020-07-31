@@ -8,7 +8,6 @@ class App extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			characterName: "Luke Skywalker",
 			resultingNames: []
 		}
 	}
@@ -20,12 +19,11 @@ class App extends Component {
 	}
 
 	populateResults = (results) => {
-		results.map(name => {
-			this.setState({
-				resultingNames: this.state.resultingNames + name
-			})
+		console.log(results)
+		const people = results.map(people => people.name)
+		this.setState({
+			resultingNames: people
 		})
-		return results
 	}
 
 
@@ -36,12 +34,12 @@ class App extends Component {
 				<Header/>
 				<main className='App'>
 					<PeopleSearch 
-					character={this.state.characterName} 
 					searchCharacter={this.searchCharacter}
 					popRes={this.populateResults}
 					/>
 					<SearchResults 
-					characters={this.state.resultingNames}/>
+					characters={this.state.resultingNames}
+					/>
 				</main>
 			</>
 		);

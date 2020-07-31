@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 
 export default class SearchResults extends Component {
 
-static defaultProps = {
-    resultingNames: ["Luke"]
-}
+// static defaultProps = {
+//     resultingNames: ["Luke"]
+// }
 
     render(){
         const namesArr = this.props.characters

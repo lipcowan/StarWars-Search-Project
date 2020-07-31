@@ -6,10 +6,9 @@ export default class PeopleSearch extends Component {
     onSubmit = e => {
         e.preventDefault();
         const { characterName } = e.target;
-        this.props.searchCharacter(characterName.value);
-        const base_url = "https://swapi-thinkful.herokuapp.com/api/people/?=";
-        const name = this.props.characterName;
-
+        const base_url = "https://swapi-thinkful.herokuapp.com/api/people/?search=";
+        const name = characterName.value;
+        console.log(name)
         fetch(`${base_url}${name}`)
         .then(resp => {
             if(!resp.ok)
