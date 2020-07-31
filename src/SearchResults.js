@@ -4,7 +4,7 @@ export default class SearchResults extends Component {
     render(){
         return (
             <div>
-                <p>Search Results to be displayed here</p>
+                <p>{this.props.character}</p>
             </div>
         )
     }
